@@ -1,14 +1,14 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 // 导入组件
-import HelloWorld from '../components/HelloWorld.vue'
+import Home from '../views/Home.vue'
 
 // 定义路由
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: HelloWorld
+    component: Home
   },
   {
     path: '/detail',
