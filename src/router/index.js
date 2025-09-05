@@ -7,15 +7,14 @@ import HelloWorld from '../components/HelloWorld.vue'
 const routes = [
   {
     path: '/',
-    name: 'Home',
+    name: 'home',
     component: HelloWorld
   },
-  // 可以在这里添加更多路由
-  // {
-  //   path: '/about',
-  //   name: 'About',
-  //   component: () => import('../views/About.vue')
-  // }
+  {
+    path: '/detail',
+    name: 'detail',
+    component: () => import('../views/Detail.vue')
+  }
 ]
 
 // 创建路由实例
