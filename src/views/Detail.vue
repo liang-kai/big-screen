@@ -1,64 +1,233 @@
 <template>
   <div class="detail-page">
     <!-- <router-link to="/">返回首页</router-link> -->
-    <div class="right"></div>
     <!-- 左边 -->
     <div class="left">
       <!-- 左上-->
-       <div class="left-top"></div>
-       <div class="left-bottom">
-        <div class="title">智能系统全流程覆盖-贷前自动化实时审批</div>
-        <div class="content"></div>
-       </div>
+      <div class="left-top">
+        <div class="left-img">
+          <img src="../assets/detail/left-img.png" alt="" />
+        </div>
+        <div class="center-img">
+          <div>
+            <img src="../assets/detail/bt.png" alt="" />
+          </div>
+          <div class="p1-apply">申请人信息</div>
+        </div>
+      </div>
+      <div class="left-bottom">
+        <!-- <div class="title">智能系统全流程覆盖-贷前自动化实时审批</div> -->
+        <div class="content justify-end">
+          <!-- 中间人 -->
+          <img src="../assets/detail/man.png" alt="" class="w-88%" />
+        </div>
+        <div class="p1-apply w-60">申请卡版：xx</div>
+        <div class="p1-text flex">
+          <div style="margin-right: 10px">审批结果：通过</div>
+          <div>核发额度：{{ quota }} 万</div>
+        </div>
+      </div>
+    </div>
+    <!-- 右边 -->
+    <div class="right">
+      <div class="right-up">
+        <div class="up-1">
+          <div class="text-xs r1-top-title text-left">
+            <div>2025年9月9日</div>
+          </div>
+          <div class="right1-style">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <!-- <div>
+            <img src="../assets/detail/right-1/01.png" alt="">
+          </div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div> -->
+          </div>
+        </div>
+        <div class="up-2">
+          <img src="../assets//underpan.png" alt="" />
+        </div>
+      </div>
+      <div class="right-down">
+        <div class="down-top flex">
+          <div class="down-t-left">
+            <img
+              src="../assets/detail/sub-title.png"
+              alt=""
+              style="width: 40%"
+            />
+            <img src="../assets/detail/tp.png" alt="" style="width: 50%" />
+          </div>
+          <div class="flex down-t-right">
+            4.5亿
+          </div>
+        </div>
+        <div class="down-bottom">
+          <img src="../assets//underpan.png" alt="" />
+        </div>
+      </div>
     </div>
     <!-- <div class="vertical-line"></div> -->
   </div>
 </template>
 
 <script setup>
+import { ref } from "vue";
+// import LeftImg from '../assets/detial/left-img.png'
+// import btn2Img from '../assets/detial/title-suan.png'
+// import btn3Img from '../assets/detial/title-intel.png'
+
+// const page1 = {
+//   left: {
+//     img: LeftImg
+//   }
+// }
 // 详情页面的逻辑可以在这里编写
-const params = new URLSearchParams(window.location.search)
-const tag = params.get('tag')
+const params = new URLSearchParams(window.location.search);
+const tag = params.get("tag");
 // tag 1 是贷前 2 贷中 3 贷后
-console.log(tag, '===33')
+console.log(tag, "===33");
+
+const quota = ref("50");
 </script>
 
 <style scoped lang="less">
+.flex-y {
+  display: flex;
+  flex-flow: column;
+}
+.flex {
+  display: flex;
+}
+.bg-size-full {
+  background-size: 100% 100%;
+}
+.justify-end {
+  display: flex;
+  justify-content: flex-end;
+}
 .detail-page {
+  background-image: url("../assets/detail/bg.png");
+  background-size: 100% 100%;
   position: relative;
   height: 100%;
   width: 100%;
-  /* text-align: center; */
+  display: flex;
 }
 .left {
+  flex: 2;
   width: 74%;
-  height: 300px;
   display: flex;
   flex-flow: column;
-  align-items: center;
-  // justify-items: center;
-  &-top {
-    border: 1px solid #f00;
-    width: 200px;
-    height: 100px;
-    text-align: center;
+}
+.left-top {
+  margin-top: 56px;
+  margin-left: 40px;
+  display: flex;
+  // height: 80px;
+  .left-img {
+    width: 50%;
   }
-  
-  &-bottom {
-    width: 98%;
-    height: 100px;
-    background-color: #0d4779;
-    .title {
-      font-size: 26px;
-      color: rgba(255,255,255, 0.8);
-    }
+  .center-img {
+    width: 36%;
+  }
+}
+
+.left-bottom {
+  border: 1px solid #099409;
+  flex: 1;
+  width: 100%;
+  .content {
+    margin-left: 24%;
+    width: 80%;
+    height: 200px;
   }
 }
 
 .right {
-  float: right;
-  width: 24%;
-  background-color: #0d4779;
-  height: 100vh;
+  flex: 1;
+  &-up {
+    margin-top: 5vh;
+    margin-bottom: 2vh;
+    // height: 50%
+  }
+  &-down {
+    border: 1px solid #0f0;
+    padding: 2vh 0;
+    .down-top {
+      justify-content: baseline;
+      
+      .down-t-left {
+        margin-left: 2vh;
+      }
+      .down-t-right {
+        width: 30%;
+        background-size: 100% 100%;
+        background-image: url('../assets/detail/circle.png');
+      }
+    }
+    .down-2 {
+      padding-left: 2vh;
+    }
+  }
+  .up-1 {
+    margin-left: 2vh;
+    padding: 2vh 2vh;
+    background-color: rgba(12, 35, 72, 0.8);
+    width: 85%;
+  }
+  .up-2 {
+    margin-top: -1vh;
+    width: 92%;
+  }
+}
+
+.p1-apply {
+  margin-top: 10px;
+  background-size: 100% 100%;
+  background-image: url("../assets/detail/bg-img.png");
+  margin-left: 45%;
+}
+
+.p1-text {
+  justify-content: flex-end;
+  margin-right: 28%;
+  text-align: center;
+  margin-top: 1%;
+  font-size: 14px;
+}
+
+.right1-style {
+  padding-top: 2vh;
+  display: flex;
+  flex-flow: wrap;
+  gap: 1%; /* 统一设置间隔 */
+  width: 100%;
+  padding: 1.5vh 1vh;
+  div {
+    margin-bottom: 1.5vh;
+    margin-right: 1vh;
+    width: 30%;
+    height: 5vh;
+    border: 1px solid #f00;
+    &:nth-child(3) {
+      margin-right: 0;
+    }
+  }
+}
+
+.r1-top-title {
+  background-size: 100% 100%;
+  background-image: url("../assets/detail/right-1/r1-icon.png");
+  div {
+    padding-left: 1.4vw;
+    padding-bottom: 0.5vh;
+  }
 }
 </style>
