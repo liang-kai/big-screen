@@ -6,12 +6,13 @@ import { fileURLToPath, URL } from 'node:url'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: './',
   plugins: [
     vue(), 
     tailwindcss(), 
-    ViteImageOptimizer({
-        /* pass your config */
-      }),
+    ...(process.env.NODE_ENV !== 'production' ? [ViteImageOptimizer({
+      /* pass your config */
+    })] : []),
   ],
   resolve: {
     alias: {
