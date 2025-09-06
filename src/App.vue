@@ -5,6 +5,19 @@
 <template>
   <!-- 整体黑色背景 -->
   <div class="min-h-screen w-full flex items-center justify-center">
+    <!-- <div class="absolute inset-0 z-0 pointer-events-none select-none">
+      <template v-for="i in 101" :key="i">
+        <div
+          class="absolute top-0 h-full border-l border-dashed border-blue-300"
+          :style="{ left: `calc(${(i - 1)}% / 100 * 100)` }"
+        >
+          <span
+            class="absolute top-2 left-0 text-xs text-blue-400 bg-black/60 px-1 rounded"
+            :style="{ transform: 'translateX(-50%)' }"
+          >{{ i - 1 }}</span>
+        </div>
+      </template>
+    </div> -->
     <!-- 主要内容区域，2.7:1 比例，宽度为屏幕宽度 -->
     <div
       class="relative w-screen aspect-[2.7/1] overflow-hidden rounded-lg shadow-lg"

@@ -82,23 +82,35 @@
 
 </script>
 <template>
-    <div class="w-full h-full">
-        <div class="top flex justify-center flex-col items-center mt-4">
-            <img src="../assets/data/title.png" alt="" class="block object-contain w-2/3">
-            <img src="../assets/data/intro.png" alt="" class="block object-contain w-2/3">
+    <div class="w-full h-full flex flex-col">
+        <div class="top flex-1 flex justify-between flex-col items-center">
+            <img src="../assets/data/title.png" alt="" class="block object-contain w-54/100">
+            <img src="../assets/data/intro.png" alt="" class="block object-contain w-78/100">
             <div class="w-full">
                 <div  class="flex justify-center items-center gap-3 mt-2 flex-wrap">
-                    <img v-for="tab in tabs.slice(0,3)" :key="tab.value" :src="tab.active ? tab.activeImg : tab.defaultImg" alt="" class="h-[2.6vw] cursor-pointer block" @click="tabClick(tab)">
+                    <img v-for="tab in tabs.slice(0,3)" :key="tab.value" :src="tab.active ? tab.activeImg : tab.defaultImg" alt="" class="h-[2.6vw] cursor-pointer block" @click="tabClick(tab)" :class="[
+                        'cursor-pointer transition-transform duration-200',
+                        tab.active ? 'scale-120' : 'scale-100'
+                    ]">
                 </div>
                 <div class="flex justify-center items-center gap-1 mt-2 flex-wrap">
-                    <img v-for="tab in tabs.slice(3,)" :key="tab.value" :src="tab.active ? tab.activeImg : tab.defaultImg" alt="" class="h-[2.6vw] cursor-pointer" @click="tabClick(tab)">
+                    <img v-for="tab in tabs.slice(3,)" :key="tab.value" :src="tab.active ? tab.activeImg : tab.defaultImg" alt="" class="h-[2.6vw] cursor-pointer" @click="tabClick(tab)" :class="[
+                        'cursor-pointer transition-transform duration-200',
+                        tab.active ? 'scale-120' : 'scale-100'
+                    ]">
                 </div>
             </div>
-            <img src="../assets/underpan.png" alt="">
+            <img src="../assets/underpan.png" alt="" class="mb-2">
         </div>
-        <div class="bottom">
+        <div class="bottom flex-1 flex flex-col justify-end">
             <img :src="activeTab.os" alt="" class="block object-contain w-full">
             <img src="../assets/underpan.png" alt=""></img>
         </div>
     </div>
 </template>
+
+<style>
+.scale-120 {
+  transform: scale(1.05);
+}
+</style>

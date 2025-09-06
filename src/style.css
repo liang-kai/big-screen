@@ -4,3 +4,9 @@ html {
   color: white;
   text-align: center;
 }
+.left-top-title {
+  position: absolute;
+  top: 16%;
+  left: 9%;
+  width: 28vw;
+}
