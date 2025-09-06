@@ -35,7 +35,9 @@
           <router-link to="/">首页</router-link>
           <router-link to="/detail">详情</router-link>
         </nav> -->
-        <router-view></router-view>
+        <transition name="fade-slide" mode="out-in">
+          <router-view></router-view>
+        </transition>
         <div class="vertical-line"></div>
         
       </div>
@@ -77,5 +79,19 @@
   height: 100%;
   background-color: #ccc;
   transform: translateX(-50%);
+}
+</style>
+
+<style>
+.fade-slide-enter-active, .fade-slide-leave-active {
+  transition: opacity 0.5s, transform 0.5s;
+}
+.fade-slide-enter-from, .fade-slide-leave-to {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.fade-slide-enter-to, .fade-slide-leave-from {
+  opacity: 1;
+  transform: translateY(0);
 }
 </style>

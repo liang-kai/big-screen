@@ -6,9 +6,10 @@ import Arithmetic from '../components/Arithmetic.vue'
 import btn1Img from '../assets/home/title-data.png'
 import btn2Img from '../assets/home/title-suan.png'
 import btn3Img from '../assets/home/title-intel.png'
+import { useRouter } from 'vue-router'
 
 const activeTab = ref('data')
-
+const router = useRouter()
 
 const btnList = ref([
   {
@@ -33,6 +34,10 @@ const btnList = ref([
 
 const tabClick = (btn) => {
   if (btn.active) return
+  if(btn.value === 'intel') {
+    router.push('/intel')
+    return
+  }
   btnList.value.forEach(b => {
     b.active = false
   })
@@ -54,7 +59,7 @@ const tabClick = (btn) => {
             <div class="absolute w-full h-full top-0 left-0 flex justify-center"><img :src="l.img" alt="" class="block object-contain w-1/2 mb-1"></div>
           </div>
         </div>
-      <div class="bg-red-100/10 w-1/2 h-full left-[33.3vw] absolute">
+      <div class="w-1/2 h-full left-[33.3vw] absolute">
         <img
           src="@/assets/home/u-boat.png"
           alt="u-boat"
@@ -70,7 +75,7 @@ const tabClick = (btn) => {
 
     </div>
     <!-- 右区 30% -->
-    <div class="flex-1 h-full p-2 bg-teal-50/10">
+    <div class="flex-1 h-full p-2 ">
       <!-- 可在此添加右区内容 -->
       <Data v-if="activeTab === 'data'" />
       <Arithmetic v-if="activeTab === 'arithmetic'" />

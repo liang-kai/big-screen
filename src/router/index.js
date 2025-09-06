@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 // 导入组件
 import Home from '../views/Home.vue'
+import Detail from '../views/Detail.vue'
+import Intel from '../views/Intel.vue'
 
 // 定义路由
 const routes = [
@@ -13,7 +15,12 @@ const routes = [
   {
     path: '/detail',
     name: 'detail',
-    component: () => import('../views/Detail.vue')
+    component: Detail
+  },
+  {
+    path: '/intel',
+    name: 'intel',
+    component: Intel
   }
 ]
 
