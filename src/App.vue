@@ -31,7 +31,7 @@ const isProd = import.meta.env.PROD;
         draggable="false"
       />
       <!-- 内容层 -->
-      <div class="relative z-10 w-full h-full divided-container">
+      <div class="relative z-10 w-full h-full" :class="{ 'divided-container': !isProd }">
         <!-- <nav>
           <router-link to="/">首页</router-link>
           <router-link to="/detail">详情</router-link>
@@ -39,7 +39,7 @@ const isProd = import.meta.env.PROD;
         <transition name="fade-slide" mode="out-in">
           <router-view></router-view>
         </transition>
-        <div class="vertical-line"></div>
+        <div class="vertical-line" v-if="!isProd"></div>
         
       </div>
     </div>
