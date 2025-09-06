@@ -1,0 +1,2 @@
+// uat环境	http://dsi.uatapps.oa.citicbank.com/dsi-spring-cloud-gateway/dsi-data-api/v1/data/api/rtdm/cxzt-screen 生产环境	http://prod-ocp-gw.dsi.eprod-kzx1.cncb/dsi-data-api/v1/data/api/rtdm/cxzt-screen
+// appid：4p1rAHEm 密钥：MzM2MjEzNWQ5ODA1NGNhNWI2M2VlZDNjZjk2OGQ2NWQ=

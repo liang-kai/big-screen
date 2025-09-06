@@ -1,10 +1,11 @@
 <script setup>
 // 不再需要直接导入 HelloWorld，路由会自动处理
+const isProd = import.meta.env.PROD;
 </script>
 
 <template>
   <!-- 整体黑色背景 -->
-  <div class="min-h-screen w-full flex items-center justify-center">
+  <div class="min-h-screen w-full flex items-center justify-center" :class="{ 'bg-black': isProd }">
     <!-- <div class="absolute inset-0 z-0 pointer-events-none select-none">
       <template v-for="i in 101" :key="i">
         <div
