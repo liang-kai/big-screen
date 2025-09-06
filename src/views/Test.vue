@@ -3,12 +3,8 @@
     <Daizhogn />
 </template>
 
-<script>
+<script setup>
 import Daizhogn from '../components/Daizhong.vue';
 
-export default {
-  components: {
-    Daizhogn
-  }
-}
+
 </script>

@@ -38,7 +38,7 @@ export default [
           {
               indicator_name: "当日第一笔进件渠道",
               indicator_dt: rptDt, 
-              indicator_value: `${rptDt} 00:02:42`,
+              indicator_value: `线上`,
               kpi_rn: "",
               mail_city: "",
               mail_prov: "",
@@ -48,7 +48,7 @@ export default [
           {
               indicator_name: "当日第一笔申请卡版",
               indicator_dt: rptDt, 
-              indicator_value: `${rptDt} 00:11:42`,
+              indicator_value: `中信红`,
               kpi_rn: "",
               mail_city: "",
               mail_prov: "",
@@ -64,6 +64,16 @@ export default [
               mail_prov: "",
               mode: mode,
               rpt_dt: rptDt,
+          },
+          {
+                indicator_name: "实时运算次数",
+                indicator_dt: rptDt, 
+                indicator_value: Math.floor(Math.random() * 1000000000) + 50000000,
+                kpi_rn: "",
+                mail_city: "",
+                mail_prov: "全球",
+                mode: mode,
+                rpt_dt: rptDt,
           },
           {
               indicator_name: "当天交易笔数",
@@ -114,10 +124,20 @@ export default [
               mail_prov: "",
               mode: mode,
               rpt_dt: rptDt,
+          },
+                    { // mode = 0,indicatorName = 30天日均交易笔数
+              indicator_name: "卡产品大类不良率G01口径",
+              indicator_dt: rptDt, 
+              indicator_value: `${rptDt} 00:31:42`,
+              kpi_rn: "",
+              mail_city: "",
+              mail_prov: "",
+              mode: mode,
+              rpt_dt: rptDt,
           }
       ];
       let result = allResults;
-      if (mode === 0 && indicatorName) {
+      if (+mode === 0 && indicatorName) {
         result = allResults.filter(item => item.indicator_name === indicatorName);
       }
       return {
