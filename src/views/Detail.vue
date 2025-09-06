@@ -11,11 +11,16 @@
         <div class="content"></div>
        </div>
     </div>
+    <!-- <div class="vertical-line"></div> -->
   </div>
 </template>
 
 <script setup>
 // 详情页面的逻辑可以在这里编写
+const params = new URLSearchParams(window.location.search)
+const tag = params.get('tag')
+// tag 1 是贷前 2 贷中 3 贷后
+console.log(tag, '===33')
 </script>
 
 <style scoped lang="less">
