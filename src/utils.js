@@ -27,7 +27,19 @@ export const getData = async (params) => {
             },
             body: JSON.stringify(params)
         });
-        return { data, error, isFetching };
+        let jsonData = null;
+        if (data && data.value) {
+            if (typeof data.value === 'string') {
+                try {
+                    jsonData = JSON.parse(data.value);
+                } catch (e) {
+                    jsonData = data.value;
+                }
+            } else {
+                jsonData = data.value;
+            }
+        }
+        return { data: jsonData, error, isFetching };
     } catch (err) {
         return { data: null, error: err, isFetching: false };
     }
