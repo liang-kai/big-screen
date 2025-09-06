@@ -9,23 +9,25 @@
           <img src="../assets/detail/left-img.png" alt="" />
         </div>
         <div class="center-img">
-          <div>
+          <div class="w-[15vw]">
             <img src="../assets/detail/bt.png" alt="" />
           </div>
-          <div class="p1-apply">申请人信息</div>
+          <div class="p1-apply w-[10vw]">申请人信息</div>
         </div>
       </div>
       <div class="left-bottom">
         <!-- <div class="title">智能系统全流程覆盖-贷前自动化实时审批</div> -->
-        <div class="content justify-end">
+        <div class="content">
+          <div class="w-[50vw] h-[20vw] man">
+            <img src="../assets/detail/man.png" alt="" class="w-[50vw]" />
+          </div>
           <!-- 中间人 -->
-          <img src="../assets/detail/man.png" alt="" class="w-88%" />
         </div>
         <div class="p1-apply w-60">申请卡版：xx</div>
-        <div class="p1-text flex">
-          <div style="margin-right: 10px">审批结果：通过</div>
-          <div>核发额度：{{ quota }} 万</div>
-        </div>
+        <!-- <div class="p1-text flex"> -->
+          <!-- <div style="margin-right: 10px">审批结果：通过</div> -->
+          <!-- <div>核发额度：{{ quota }} 万</div> -->
+        <!-- </div> -->
       </div>
     </div>
     <!-- 右边 -->
@@ -62,7 +64,7 @@
               alt=""
               style="width: 40%"
             />
-            <img src="../assets/detail/tp.png" alt="" style="width: 50%" />
+            <img src="../assets/detail/tp.png" alt="" />
           </div>
           <div class="flex down-t-right">
             4.5亿
@@ -127,44 +129,47 @@ const quota = ref("50");
   flex-flow: column;
 }
 .left-top {
-  margin-top: 56px;
-  margin-left: 40px;
-  display: flex;
-  // height: 80px;
+  margin-top: 5vw;
+  margin-left: 14vw;
+  display: flex;;
   .left-img {
-    width: 50%;
+    width: 20vw;
   }
   .center-img {
-    width: 36%;
+    width: 28vw;
   }
 }
 
 .left-bottom {
-  border: 1px solid #099409;
   flex: 1;
   width: 100%;
   .content {
-    margin-left: 24%;
-    width: 80%;
-    height: 200px;
+   position: relative;
+    // width: 60vw;
+    // background-image: url('../assets/detail/man.png');
+    // height: 80vw;
+    .man {
+      right: 4vw;
+      position: absolute;
+    }
   }
 }
 
 .right {
   flex: 1;
   &-up {
-    margin-top: 5vh;
-    margin-bottom: 2vh;
+    margin-top: 2vw;
+    // margin-bottom: 2vw;
     // height: 50%
   }
   &-down {
     border: 1px solid #0f0;
-    padding: 2vh 0;
+    // padding: 2vw 0;
     .down-top {
       justify-content: baseline;
       
       .down-t-left {
-        margin-left: 2vh;
+        margin-left: 2vw;
       }
       .down-t-right {
         width: 30%;
@@ -173,17 +178,17 @@ const quota = ref("50");
       }
     }
     .down-2 {
-      padding-left: 2vh;
+      padding-left: 2vw;
     }
   }
   .up-1 {
-    margin-left: 2vh;
-    padding: 2vh 2vh;
+    margin-left: 2vw;
+    padding: 1vw 1vw;
     background-color: rgba(12, 35, 72, 0.8);
     width: 85%;
   }
   .up-2 {
-    margin-top: -1vh;
+    margin-top: -1vw;
     width: 92%;
   }
 }
@@ -192,7 +197,7 @@ const quota = ref("50");
   margin-top: 10px;
   background-size: 100% 100%;
   background-image: url("../assets/detail/bg-img.png");
-  margin-left: 45%;
+  // margin-left: 45%;
 }
 
 .p1-text {
@@ -204,17 +209,17 @@ const quota = ref("50");
 }
 
 .right1-style {
-  padding-top: 2vh;
+  padding-top: 2vw;
   display: flex;
   flex-flow: wrap;
   gap: 1%; /* 统一设置间隔 */
   width: 100%;
-  padding: 1.5vh 1vh;
+  padding: 1.5vw 0.5vw;
   div {
-    margin-bottom: 1.5vh;
-    margin-right: 1vh;
+    margin-bottom: 1.5vw;
+    margin-right: 0.5vw;
     width: 30%;
-    height: 5vh;
+    height: 5vw;
     border: 1px solid #f00;
     &:nth-child(3) {
       margin-right: 0;
@@ -226,8 +231,8 @@ const quota = ref("50");
   background-size: 100% 100%;
   background-image: url("../assets/detail/right-1/r1-icon.png");
   div {
-    padding-left: 1.4vw;
-    padding-bottom: 0.5vh;
+    padding-left: 1vw;
+    padding-bottom: 0.5vw;
   }
 }
 </style>
