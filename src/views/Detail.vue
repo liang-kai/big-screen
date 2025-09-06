@@ -12,68 +12,42 @@
           <div class="w-[15vw]">
             <img src="../assets/detail/bt.png" alt="" />
           </div>
-          <div class="p1-apply w-[10vw]">申请人信息</div>
+          <div style="margin-top: 1vw;">
+            <Arrow text="申请人信息"></Arrow>
+          </div>
         </div>
       </div>
       <div class="left-bottom">
         <!-- <div class="title">智能系统全流程覆盖-贷前自动化实时审批</div> -->
-        <div class="content">
-          <div class="w-[50vw] h-[20vw] man">
+        <div class="content relative">
+          <div class="w-[50vw] h-[21vw] man">
             <img src="../assets/detail/man.png" alt="" class="w-[50vw]" />
+          </div>
+          <div class="w-[50vw] flex h-[21vw] absolute left-bottom-info text-xs">
+              <div class="sex">女</div>
+              <div class="time">2020-12-09</div>
+              <div class="age">25</div>
+              <div class="duty">经理</div>
+              <div class="work-city">广东深圳</div>
+              <div class="degree">本科</div>
+              <div class="live-city">深圳</div>
+              <div class="credit-point">100</div>
           </div>
           <!-- 中间人 -->
         </div>
-        <div class="p1-apply w-60">申请卡版：xx</div>
-        <!-- <div class="p1-text flex"> -->
-          <!-- <div style="margin-right: 10px">审批结果：通过</div> -->
-          <!-- <div>核发额度：{{ quota }} 万</div> -->
-        <!-- </div> -->
+        <div class="flex justify-center">
+          <Arrow text="申请卡版：XXXXXXXXXXX"></Arrow>
+        </div>
+        <div class="p1-text flex justify-center text-sm">
+          <div style="margin-right: 2vw">审批结果：通过</div>
+          <div>核发额度：{{ quota }} 万</div>
+        </div>
       </div>
     </div>
     <!-- 右边 -->
     <div class="right">
-      <div class="right-up">
-        <div class="up-1">
-          <div class="text-xs r1-top-title text-left">
-            <div>2025年9月9日</div>
-          </div>
-          <div class="right1-style">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <!-- <div>
-            <img src="../assets/detail/right-1/01.png" alt="">
-          </div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div> -->
-          </div>
-        </div>
-        <div class="up-2">
-          <img src="../assets//underpan.png" alt="" />
-        </div>
-      </div>
-      <div class="right-down">
-        <div class="down-top flex">
-          <div class="down-t-left">
-            <img
-              src="../assets/detail/sub-title.png"
-              alt=""
-              style="width: 40%"
-            />
-            <img src="../assets/detail/tp.png" alt="" />
-          </div>
-          <div class="flex down-t-right">
-            4.5亿
-          </div>
-        </div>
-        <div class="down-bottom">
-          <img src="../assets//underpan.png" alt="" />
-        </div>
-      </div>
+      <ProcessData></ProcessData>
+      <RealTimeData></RealTimeData>
     </div>
     <!-- <div class="vertical-line"></div> -->
   </div>
@@ -84,7 +58,9 @@ import { ref } from "vue";
 // import LeftImg from '../assets/detial/left-img.png'
 // import btn2Img from '../assets/detial/title-suan.png'
 // import btn3Img from '../assets/detial/title-intel.png'
-
+import ProcessData from '../components/ProcessData.vue'
+import RealTimeData from '../components/RealTimeData.vue'
+import Arrow from "../components/Arrow.vue";
 // const page1 = {
 //   left: {
 //     img: LeftImg
@@ -94,6 +70,7 @@ import { ref } from "vue";
 const params = new URLSearchParams(window.location.search);
 const tag = params.get("tag");
 // tag 1 是贷前 2 贷中 3 贷后
+
 console.log(tag, "===33");
 
 const quota = ref("50");
@@ -106,6 +83,9 @@ const quota = ref("50");
 }
 .flex {
   display: flex;
+}
+.justify-center {
+  justify-content: center;
 }
 .bg-size-full {
   background-size: 100% 100%;
@@ -143,54 +123,79 @@ const quota = ref("50");
 .left-bottom {
   flex: 1;
   width: 100%;
+  padding-left: 14vw;
   .content {
    position: relative;
     // width: 60vw;
     // background-image: url('../assets/detail/man.png');
-    // height: 80vw;
+    height: 21vw;
     .man {
-      right: 4vw;
       position: absolute;
     }
+    .left-bottom-info {
+      position: absolute;
+
+      >div {
+        position: absolute;
+        width: 5vw;
+        text-align: center;
+      }
+      .sex {
+        left: 11vw;
+        top: 2.6vw
+      }
+      .time {
+        right: 9.4vw;
+        top: 2.6vw;
+      }
+      .age {
+        left: 9.6vw;
+        top: 7vw;
+      }
+      .duty {
+        right: 9vw;
+        top: 7vw;
+      }
+      .work-city {
+        left: 9.2vw;
+        top: 11.7vw;
+      }
+      .degree {
+        right: 9.1vw;
+        top: 11.7vw;
+      }
+      .live-city {
+        left: 10.3vw;
+        top: 16.3vw;
+      }
+      .credit-point {
+        right: 11.2vw;
+        top: 16.2vw;
+      }
+
+
+    }
+    // &::after {
+    //   content: '';
+    //   display: block;
+    //   clear: both;
+    // }
   }
+  .card-type {
+    padding: 0 5vw;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+  }
+  .p1-text {
+    margin-top: 1%;
+  }
+
 }
 
 .right {
   flex: 1;
-  &-up {
-    margin-top: 2vw;
-    // margin-bottom: 2vw;
-    // height: 50%
-  }
-  &-down {
-    border: 1px solid #0f0;
-    // padding: 2vw 0;
-    .down-top {
-      justify-content: baseline;
-      
-      .down-t-left {
-        margin-left: 2vw;
-      }
-      .down-t-right {
-        width: 30%;
-        background-size: 100% 100%;
-        background-image: url('../assets/detail/circle.png');
-      }
-    }
-    .down-2 {
-      padding-left: 2vw;
-    }
-  }
-  .up-1 {
-    margin-left: 2vw;
-    padding: 1vw 1vw;
-    background-color: rgba(12, 35, 72, 0.8);
-    width: 85%;
-  }
-  .up-2 {
-    margin-top: -1vw;
-    width: 92%;
-  }
+  margin-top: 1.8vw;
 }
 
 .p1-apply {
@@ -200,32 +205,9 @@ const quota = ref("50");
   // margin-left: 45%;
 }
 
-.p1-text {
-  justify-content: flex-end;
-  margin-right: 28%;
-  text-align: center;
-  margin-top: 1%;
-  font-size: 14px;
-}
 
-.right1-style {
-  padding-top: 2vw;
-  display: flex;
-  flex-flow: wrap;
-  gap: 1%; /* 统一设置间隔 */
-  width: 100%;
-  padding: 1.5vw 0.5vw;
-  div {
-    margin-bottom: 1.5vw;
-    margin-right: 0.5vw;
-    width: 30%;
-    height: 5vw;
-    border: 1px solid #f00;
-    &:nth-child(3) {
-      margin-right: 0;
-    }
-  }
-}
+
+
 
 .r1-top-title {
   background-size: 100% 100%;
