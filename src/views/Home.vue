@@ -8,7 +8,7 @@ import btn2Img from '../assets/home/title-suan.png'
 import btn3Img from '../assets/home/title-intel.png'
 import { useRouter } from 'vue-router'
 
-const activeTab = ref('data')
+const activeTab = ref('')
 const router = useRouter()
 
 const btnList = ref([
@@ -33,7 +33,6 @@ const btnList = ref([
 ])
 
 const tabClick = (btn) => {
-  if (btn.active) return
   if(btn.value === 'intel') {
     router.push('/intel')
     return
@@ -77,6 +76,7 @@ const tabClick = (btn) => {
     <!-- 右区 30% -->
     <div class="flex-1 h-full p-2 ">
       <!-- 可在此添加右区内容 -->
+       <img v-if="!activeTab" src="../assets/home/home-right.png" alt="" class="block object-contain w-full h-full">
       <Data v-if="activeTab === 'data'" />
       <Arithmetic v-if="activeTab === 'arithmetic'" />
     </div>

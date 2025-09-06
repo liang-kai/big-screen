@@ -12,7 +12,7 @@ const getD = async () => {
   console.log(data)
 }
 
-const { start, stop } = usePolling(getD, 3000) // 3秒轮询
+const { start, stop } = usePolling(getD, 5000) // 3秒轮询
 onUnmounted(() => {
   stop()
 })
