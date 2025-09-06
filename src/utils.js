@@ -39,7 +39,7 @@ export const getData = async (params) => {
                 jsonData = data.value;
             }
         }
-        return { data: jsonData, error: error?.value ?? null, isFetching: isFetching?.value ?? false };
+        return { data: jsonData.data.result, error: error?.value ?? null, isFetching: isFetching?.value ?? false };
     } catch (err) {
         return { data: null, error: err, isFetching: false };
     }

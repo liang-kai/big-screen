@@ -22,9 +22,11 @@ const isProd = import.meta.env.PROD;
           <router-link to="/">首页</router-link>
           <router-link to="/detail">详情</router-link>
         </nav> -->
-        <transition name="fade-slide" mode="out-in">
-          <router-view></router-view>
-        </transition>
+        <router-view v-slot="{ Component }">
+          <transition name="fade-slide" mode="out-in">
+            <component :is="Component" />
+          </transition>
+        </router-view>
         <div class="vertical-line" v-if="!isProd"></div>
         
       </div>
